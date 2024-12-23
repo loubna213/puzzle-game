@@ -9,6 +9,41 @@
     <title>Puzzle Game | Game Over</title>
 </head>
 <body>
-    
+    <section class="end-screen">
+        <img class="cloud" src="./images/cloud.png" alt="cloud">
+        <img class="cloud" src="./images/cloud.png" alt="cloud">
+        <img class="cloud" src="./images/cloud.png" alt="cloud">
+        <div class="container">
+            <h1>Game Over</h1>
+            <h2 id="resultMessage"></h2>
+            <button id="try-again" class="btn">Try Again</button>
+        </div>
+    </section>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('try-again').addEventListener('click', () => {
+                window.location.href = 'index.html';
+            })
+            // Function to parse URL query parameters
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Retrieve the 'result' parameter from the URL
+            const gameResult = getQueryParam('result');
+            const resultMessage = document.getElementById('resultMessage');
+
+            // Display the appropriate message based on the 'result' parameter
+            if (gameResult === 'won') {
+                resultMessage.textContent = 'Congratulations! You solved the puzzle. YOU WON';
+            } else if (gameResult === 'lose') {
+                resultMessage.textContent = 'Some pieces are not in the correct place. YOU LOSE';
+            } else {
+                resultMessage.textContent = 'Error: No valid result found.'; // Fallback message
+            }
+        };
+    </script>
 </body>
 </html>

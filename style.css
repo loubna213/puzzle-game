@@ -13,6 +13,13 @@ a {
     text-decoration: none;
     color: #000;
 }
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .btn {
     margin-top: 2rem;
     font-size: 1.3rem;
@@ -28,6 +35,10 @@ a {
 }
 .btn:hover {
     border-color: #ff3193;
+}
+#timer {
+    font-size: 2rem;
+    font-weight: 600;
 }
 .container {
     max-width: 1440px;
