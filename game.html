@@ -169,12 +169,13 @@
             let imageName = getFileName(selectedImageUrl)
 
             images.forEach((img, index) => {
-                // Construct the expected src for each piece
                 const expectedSrc = `file:///C:/Users/Packard%20bell/Desktop/puzzle_game/images/${imageName}/piece_${index + 1}.jpg`;
+                console.log(`Expected: ${expectedSrc}, Actual: ${img.src}`);
                 if (img.src !== expectedSrc) {
                     solved = false;
                 }
             });
+
 
             if (solved) {
                 window.location.href = 'end.html?result=won';
